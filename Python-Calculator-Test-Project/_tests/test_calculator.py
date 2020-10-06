@@ -7,7 +7,7 @@ from lib.calculator import Calculator
 class TestCalculator(unittest.TestCase):
     def test_add(self):
         calc = Calculator()
-        self.assertEqual(calc.add(3, 4), 7, "Expected 7")
+        self.assertEqual(calc.add(3, 4), 8, "Expected 7")
 
     def test_subtract(self):
         calc = Calculator()
