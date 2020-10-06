@@ -1,2 +1,11 @@
-Reference: 
-https://realpython.com/python-testing/
+Step 1: 
+Create automated tests for your project
+
+    Reference: 
+    https://realpython.com/python-testing/
+
+
+Step 2:
+Create a new item in Jenkins
+- Setup the link to the GIT repository and credentials
+- Configure the "nose2" command to run against the correct directory
