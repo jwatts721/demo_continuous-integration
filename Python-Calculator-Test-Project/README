@@ -9,3 +9,37 @@ Step 2:
 Create a new item in Jenkins
 - Setup the link to the GIT repository and credentials
 - Configure the "nose2" command to run against the correct directory
+
+
+SETTING UP SonarQube
+The path of the binary for the sonarqube command must be in the PATH variable for any environment
+
+SonarQube Commands:
+Windows
+sonar-scanner.bat -D"sonar.projectKey=python-calculator-test" -D"sonar.sources=." -D"sonar.host.url=http://mark1.xbiz.home:9000" -D"sonar.login=af6767aa985459f3aedaacacef66139f8362fb4d"
+
+
+Linux
+sonar-scanner \
+  -Dsonar.projectKey=python-calculator-test \
+  -Dsonar.sources=. \
+  -Dsonar.host.url=http://mark1.xbiz.home:9000 \
+  -Dsonar.login=af6767aa985459f3aedaacacef66139f8362fb4d
+
+
+SonarQube Integration with Jenkins
+https://www.youtube.com/watch?v=jh7utASgKj4
+https://devops4solutions.com/jenkins-sonarqube-integration/#:~:text=Jenkins%20integration%20with%20SonarQube%201%20Download%20and%20start,and%20specify%20the%20details.%20...%20More%20items...%20
+
+Configuring Sonar Build Step
+* Add Build Step -> Execute SonarQube Scanner
+* Under "Analysis properties"
+  #Project Metadata
+  sonar.projectKey=python-calculator-test
+  sonar.projectName=Python project analyzed with SonarQube Runner
+  sonar.projectVersion=1.0
+
+  # Comma-separated paths to directories with sources (required)
+  sonar.sources=.
+
+  Save or Apply
