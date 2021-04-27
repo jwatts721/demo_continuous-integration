@@ -9,7 +9,10 @@ Step 2:
 Create a new item in Jenkins
 - Setup the link to the GIT repository and credentials
 - Configure the "nose2" command to run against the correct directory
+- check the path of the project to get the location of python-calc-test.sh
 
+Example:
+/var/jenkins_home/workspace/Python\ Calculator\ \(CI\ Test\ Project\)/python-calc-test.sh
 
 SETTING UP SonarQube
 The path of the binary for the sonarqube command must be in the PATH variable for any environment
