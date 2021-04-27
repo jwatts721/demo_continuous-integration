@@ -31,7 +31,7 @@ Linux
 sonar-scanner \
   -Dsonar.projectKey=python-calculator-test \
   -Dsonar.sources=. \
-  -Dsonar.host.url=http://mark3.xbiz.home:9000 \
+  -Dsonar.host.url=http://<ip_address>:9000 \
   -Dsonar.login=c403a68d4afe102a18ce90b1e0a5f95073d2d9d6
 
 
