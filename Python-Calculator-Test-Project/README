@@ -16,6 +16,11 @@ Example:
 
 SETTING UP SonarQube
 The path of the binary for the sonarqube command must be in the PATH variable for any environment
+- Extract the SonarQube zip file
+- Add the binary to the PATH
+- run the command
+	export /var/jenkins_home/bin/sonar-scanner-4.5.0.2216-linux/bin:$PATH
+
 
 SonarQube Commands:
 Windows
