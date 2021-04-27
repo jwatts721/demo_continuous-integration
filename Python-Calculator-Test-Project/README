@@ -31,8 +31,8 @@ Linux
 sonar-scanner \
   -Dsonar.projectKey=python-calculator-test \
   -Dsonar.sources=. \
-  -Dsonar.host.url=http://mark1.xbiz.home:9000 \
-  -Dsonar.login=af6767aa985459f3aedaacacef66139f8362fb4d
+  -Dsonar.host.url=http://mark3.xbiz.home:9000 \
+  -Dsonar.login=c403a68d4afe102a18ce90b1e0a5f95073d2d9d6
 
 
 SonarQube Integration with Jenkins
