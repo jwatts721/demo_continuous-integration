@@ -7,32 +7,40 @@ Create automated tests for your project
 
 Step 2:
 Create a new item in Jenkins
-- Setup the link to the GIT repository and credentials
-- Configure the "nose2" command to run against the correct directory
-- check the path of the project to get the location of python-calc-test.sh
+- Setup the link to the GIT repository (either through remote login credentials)
+  - Best Practice: Setup SSH Credentials and get the private key from id_rsa to enter as the private key credentials
 
-Example:
-/var/jenkins_home/workspace/Python\ Calculator\ \(CI\ Test\ Project\)/python-calc-test.sh
+- Configure a Build Step -> Execute shell
+  - Configure the "nose2" command to run against the correct directory
+  - check the path of the project to get the location of python-calc-test.sh
 
-SETTING UP SonarQube
+    Example:
+      /var/jenkins_home/workspace/Python\ Calculator\ \(CI\ Test\ Project\)/python-calc-test.sh
+      /home/jenkins/repos/continuous-integration/jenkins-sonarqube-python-example/python-calc-test.sh
+
+
+Step 3:
+Setting Up SonarQube
 The path of the binary for the sonarqube command must be in the PATH variable for any environment
 - Extract the SonarQube zip file
 - Add the binary to the PATH
-- run the command
-	export /var/jenkins_home/bin/sonar-scanner-4.5.0.2216-linux/bin:$PATH
+- Modify or create .bashrc in the user home directory and add the following line:
+	export PATH=/var/jenkins_home/bin/sonar-scanner-4.5.0.2216-linux/bin:$PATH
+- Logout and login again to see if you can run:
+  sonar-scanner
 
 
 SonarQube Commands:
 Windows
-sonar-scanner.bat -D"sonar.projectKey=python-calculator-test" -D"sonar.sources=." -D"sonar.host.url=http://mark1.xbiz.home:9000" -D"sonar.login=af6767aa985459f3aedaacacef66139f8362fb4d"
+sonar-scanner.bat -D"sonar.projectKey=python-calculator-test" -D"sonar.sources=." -D"sonar.host.url=http://<ip_address_or_hostname>:9000" -D"sonar.login=af6767aa985459f3aedaacacef66139f8362fb4d"
 
 
 Linux
 sonar-scanner \
   -Dsonar.projectKey=python-calculator-test \
   -Dsonar.sources=. \
-  -Dsonar.host.url=http://<ip_address>:9000 \
-  -Dsonar.login=c403a68d4afe102a18ce90b1e0a5f95073d2d9d6
+  -Dsonar.host.url=http://<ip_address_or_hostname>:9000 \
+  -Dsonar.login=<generated_token>
 
 
 SonarQube Integration with Jenkins
@@ -42,12 +50,15 @@ https://devops4solutions.com/jenkins-sonarqube-integration/#:~:text=Jenkins%20in
 Configuring Sonar Build Step
 * Add Build Step -> Execute SonarQube Scanner
 * Under "Analysis properties"
-  #Project Metadata
+  #  Project Metadata
   sonar.projectKey=python-calculator-test
   sonar.projectName=Python project analyzed with SonarQube Runner
   sonar.projectVersion=1.0
 
   # Comma-separated paths to directories with sources (required)
   sonar.sources=.
+
+  # Login generated_token
+  sonar.login=<generated_token>
 
   Save or Apply
