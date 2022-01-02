@@ -50,3 +50,6 @@ Thumbs.db
 
 # SonarQube report files
 .scannerwork/
+
+# Coverage Reports
+coverage.xml
