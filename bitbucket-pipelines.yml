@@ -15,7 +15,9 @@ pipelines:
           script:
             - if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
             - pip install pytest
-            - pytest -v jenkins-sonarqube-python-example/Python-Calculator-Test-Project/_tests/* --junitxml=test-reports/report.xml
+            - pip install nose2
+            - cd jenkins-sonarqube-python-example
+            - ./python-calc-test.sh
       - step:
           name: Lint code
           script:
