@@ -22,4 +22,4 @@ pipelines:
           script:
             # Enforce style consistency across Python projects https://flake8.pycqa.org/en/latest/manpage.html
             - pip install flake8
-            - flake8 . --extend-exclude=_test,build --show-source --statistics
+            - flake8 . --extend-exclude=_tests,dist,build --show-source --statistics
