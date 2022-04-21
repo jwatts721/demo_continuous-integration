@@ -14,7 +14,6 @@ pipelines:
             - pip
           script:
             - if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-            - pip install pytest
             - pip install nose2
             - cd jenkins-sonarqube-python-example
             - ./python-calc-test.sh
@@ -23,4 +22,4 @@ pipelines:
           script:
             # Enforce style consistency across Python projects https://flake8.pycqa.org/en/latest/manpage.html
             - pip install flake8
-            - flake8 . --extend-exclude=dist,build --show-source --statistics
+            - flake8 . --extend-exclude=_test,build --show-source --statistics
