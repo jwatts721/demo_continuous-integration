@@ -15,7 +15,7 @@ pipelines:
           script:
             - if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
             - pip install nose2
-            - cd jenkins-sonarqube-python-example
+            - cd ci-example
             - ./python-calc-test.sh
       - step:
           name: Lint code

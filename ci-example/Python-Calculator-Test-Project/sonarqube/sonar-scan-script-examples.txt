@@ -1,5 +1,5 @@
 # For Windows
-sonar-scanner.bat -D"sonar.projectKey=python-calculator-test" -D"sonar.sources=." -D"sonar.host.url=http://mark1.xbiz.home:9000" -D"sonar.login=af6767aa985459f3aedaacacef66139f8362fb4d"
+sonar-scanner.bat -D"sonar.projectKey=python-calculator-test" -D"sonar.sources=." -D"sonar.host.url=http://<host>:9000" -D"sonar.login=af6767aa985459f3aedaacacef66139f8362fb4d"
 
 # For Linux
 sonar-scanner \
