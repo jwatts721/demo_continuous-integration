@@ -37,8 +37,10 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        cd ci-example
-        ./python-calc-test.sh
+        {
+          cd ci-example
+          ./python-calc-test.sh
+        }
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
