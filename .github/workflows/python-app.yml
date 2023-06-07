@@ -40,7 +40,7 @@ jobs:
         {
           cd ci-example
           ./python-calc-test.sh
-          sed -i 's/\/home\/runner\/work\/demo_continuous-integration\/demo_continuous-integration\//\/github\/workspace\//g' ci-example/coverage.xml
+          sed -i 's/\/home\/runner\/work\/demo_continuous-integration\/demo_continuous-integration\//\/github\/workspace\//g' coverage.xml
         }
     - uses: sonarsource/sonarqube-scan-action@master
       env:
